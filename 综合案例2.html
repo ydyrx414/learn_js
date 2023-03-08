@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.开始循环
+        //3.准备一个金额
+        let money = 100
+        while(true) {
+        let num = +prompt(`
+            请你选择操作：
+            1.存钱
+            2.取钱
+            3.查看余额
+            4.退出
+            `)
+            //2.判断退出
+            if (num===4) {
+                break;
+            }
+           //4.根据 输入做操作
+           switch(num) {
+                case 1:
+                    let cun = +prompt(`请输入存款金额`)
+                    money = money + cun
+                    break
+                case 2:
+                   let qu = +prompt(`请输入取款金额`)
+                   money = money - qu
+                   if (money<0) {
+                    alert(`余额不足`)
+                   }
+                   break
+                case 3:
+                    alert(`银行卡余额为${money}`)
+                    break
+           } 
+            
+        }
+    </script>
+</body>
+</html>
